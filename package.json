@@ -1,6 +1,6 @@
 {
   "name": "tinymce-comments",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This package provide us to leave some comments on html texts",
   "main": "index.html",
   "scripts": {
@@ -12,11 +12,10 @@
   },
   "keywords": [
     "tinymce",
-    "html",
-    "editor",
+    "html editor",
     "editor",
     "text",
-    "plaintext"
+    "plain text"
   ],
   "author": "Muhammed Talha Semerci",
   "license": "ISC",
