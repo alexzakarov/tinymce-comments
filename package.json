@@ -1,0 +1,27 @@
+{
+  "name": "tinymce-comments",
+  "version": "1.0.0",
+  "description": "This package provide us to leave some comments on html texts",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuhammedTalhaSemerci/tinymce-comments.git"
+  },
+  "keywords": [
+    "tinymce",
+    "html",
+    "editor",
+    "editor",
+    "text",
+    "plaintext"
+  ],
+  "author": "Muhammed Talha Semerci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuhammedTalhaSemerci/tinymce-comments/issues"
+  },
+  "homepage": "https://github.com/MuhammedTalhaSemerci/tinymce-comments#readme"
+}

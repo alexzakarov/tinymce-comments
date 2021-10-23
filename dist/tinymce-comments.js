@@ -7,7 +7,7 @@ tinymce.initComment = () =>{
   tinymce.init({
     menubar: false,
   
-  selector: 'textarea.contant_turkish#contant_turkish',
+  selector: 'textarea.contant#contant',
   toolbar: 'customInsertButton customDateButton',
   setup: function (editor) {
   
@@ -16,7 +16,7 @@ tinymce.initComment = () =>{
       onAction: function (_) 
       {
   
-        tinymce.EditorManager.get('contant_turkish').focus();
+        tinymce.EditorManager.get('contant').focus();
   
         if(tinymce.activeEditor.selection.getContent().search('class="editable"')!= -1)
           {
@@ -24,8 +24,8 @@ tinymce.initComment = () =>{
             return;
           }
   
-        var deger = prompt('Leave a comment:');
-        var cakisma = 0 ;
+        var value = prompt('Leave a comment:');
+        var isExist = 0 ;
      
           try {
   
@@ -41,7 +41,7 @@ tinymce.initComment = () =>{
                 tag_parse = dom_doc[i].tagName.split("");
                 if(tag_parse[0] == 'H' || tag_parse[0] == 'P' || dom_doc[i].tagName == 'DIV')
                 {
-                  cakisma =1;
+                  isExist =1;
                   break;
                 }
               }
@@ -52,19 +52,19 @@ tinymce.initComment = () =>{
           }
        
   
-        if(deger != null && cakisma == 0)
+        if(value != null && isExist == 0)
         {
-          //editor.insertContent('<span  class="editable" id="comment" lang="'+deger+'">'+tinymce.activeEditor.selection.getContent()+'</span>');
+          //editor.insertContent('<span  class="editable" id="comment" lang="'+value+'">'+tinymce.activeEditor.selection.getContent()+'</span>');
   
   
-        var el = tinymce.activeEditor.dom.create('span', {id: 'editable-'+id_index, 'class': 'editable','lang':deger},String(tinymce.activeEditor.selection.getContent())  );
+        var el = tinymce.activeEditor.dom.create('span', {id: 'editable-'+id_index, 'class': 'editable','lang':value},String(tinymce.activeEditor.selection.getContent())  );
         tinymce.activeEditor.selection.setNode(el);
         id_index+=1;
         
         }
         else
         {
-          if(cakisma == 1)
+          if(isExist == 1)
           {
             alert('This type of comments are not permitted !');
           }
@@ -78,7 +78,7 @@ tinymce.initComment = () =>{
   },
   init_instance_callback: function (editor) {
     editor.on('click', function (e) {
-      tinymce.EditorManager.get('contant_turkish').focus();
+      tinymce.EditorManager.get('contant').focus();
   
   
   
