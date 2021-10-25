@@ -82,68 +82,24 @@ tinymce.initComment = () =>{
   
   
   
-   try {
-    if(e.target.className == 'editable')
-              {
-                if(e.target.tagName =='SPAN' && e.target.className =="editable" &&  e.target.className != null)
-                {
-                  if(confirm('Current comment:  '+e.target.lang+'\n'+'Do you want to delete it ?'))
-                  {
-                    e.target.outerHTML = e.target.innerHTML;
-                  }
-          
-              
-                }
-              }
-  
-              else if(e.target.parentElement.className == 'editable')
-              {
-                if(e.target.parentElement.tagName =='SPAN' && e.target.parentElement.className =="editable" &&  e.target.parentElement != null )
-                {
-                  if(confirm('Current comment:  '+e.target.parentElement.lang+'\n'+'Do you want to delete it ?'))
-  
-                  {
-  
-                    e.target.parentElement.outerHTML= e.target.parentElement.innerHTML;
-                  }
-          
-                }
-  
-              }
-  
-              else if(e.target.parentElement.parentElement.className == 'editable')
-              {
-                if(e.target.parentElement.parentElement.tagName =='SPAN' && e.target.parentElement.parentElement.className =="editable" &&  e.target.parentElement.parentElement != null )
-                {
-                  if(confirm('Current comment:  '+e.target.parentElement.parentElement.lang+'\n'+'Do you want to delete it ?'))
-                  {
-                    e.target.parentElement.parentElement.outerHTML= e.target.parentElement.parentElement.innerHTML;
-                  }
-                
-                }
-  
-              }
-  
-                
-              else if(e.target.parentElement.parentElement.parentElement.className == 'editable')
-              {
-                if(e.target.parentElement.parentElement.parentElement.tagName =='SPAN' && e.target.parentElement.parentElement.parentElement.className =="editable" &&  e.target.parentElement.parentElement.parentElement != null )
-                {
-                  if(confirm('Current comment:  '+e.target.parentElement.parentElement.parentElement.lang+'\n'+'Do you want to delete it ?'))
-  
-                  {
-                    e.target.parentElement.parentElement.parentElement.outerHTML= e.target.parentElement.parentElement.parentElement.innerHTML;
-  
-                  }
-  
-                }
-  
-              }
-      } catch (error) {
+    try {
+      if(e.target.className == 'editable')
+      {
+        if(e.target.tagName =='SPAN' && e.target.className =="editable" &&  e.target.className != null)
+        {
+          if(confirm('Current comment:  '+e.target.lang+'\n'+'Do you want to delete it ?'))
+          {
+            e.target.outerHTML = e.target.innerHTML;
+          }
+
       
+        }
       }
-      $("iframe").contents().find("body").attr("contenteditable","false");
-  
+    } catch (error) 
+    {
+      continue;
+    }
+    $("iframe").contents().find("body").attr("contenteditable","false");
   });
   },
   content_style: '.comments{  display:none;}.editable{background-color:yellow;opacity:0.6}.editable:hover{background-color:red;opacity:0.6} em{z-index:-1;}b{z-index:-1;}sup{z-index:-1;}sub{z-index:-1;}'
